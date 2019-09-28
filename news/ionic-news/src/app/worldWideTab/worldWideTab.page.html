@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Mundo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card (click)="detail(article)" *ngFor="let article of articles" class="welcome-card">
+    <img [src]="article.urlToImage" alt="" />
+    <ion-card-header>
+      <ion-card-title>{{article.title}}</ion-card-title>
+
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{article.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

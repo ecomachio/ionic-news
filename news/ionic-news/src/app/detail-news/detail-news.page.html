@@ -1,0 +1,27 @@
+<!--ion-header>
+  <ion-toolbar>
+    <ion-title>detailNews</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content>
+  <div class="articleWrapper" *ngIf="article">
+    <div class="img">
+      <ion-icon (click)="goBack()" name="arrow-round-back" class="back-button"></ion-icon>
+      <img [src]="article.urlToImage" alt="">
+    </div>
+    <div class="title text-align-center">
+      <ion-card-title>{{article.title}}</ion-card-title>
+    </div>
+    <div class="sub-title text-align-center">
+      <ion-card-subtitle>{{article.description}}</ion-card-subtitle>
+    </div>
+    <div class="content">
+      <ion-text>
+        <p>{{article.content}}...</p>
+        <h5><i>Quer saber mais? <a [href]="article.url">Acesse o site!</a></i></h5>
+      </ion-text>
+    </div>
+
+  </div>
+</ion-content>
